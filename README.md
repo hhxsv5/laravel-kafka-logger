@@ -10,7 +10,7 @@ The Kafka logger for Laravel.
 
 | Dependency | Requirement |
 | -------- | -------- |
-| [PHP](https://secure.php.net/manual/en/install.php) | `>=7.0.0` |
+| [PHP](https://secure.php.net/manual/en/install.php) | `>=5.5.9` |
 | [php-rdkafka](https://github.com/arnaud-lb/php-rdkafka) | `>=4.0.0` |
 
 ## Install
