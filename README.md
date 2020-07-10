@@ -17,7 +17,7 @@ The Kafka logger for Laravel.
 > Install package via [Composer](https://getcomposer.org/).
 
 ```shell
-composer require "hhxsv5/laravel-kafka-logger:~1.0"
+composer require "hhxsv5/laravel-kafka-logger:~1.0.0"
 ```
 
 ## Get Started
