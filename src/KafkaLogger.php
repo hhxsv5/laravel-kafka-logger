@@ -23,7 +23,7 @@ class KafkaLogger
             'flush_timeout_ms' => 5000,
             'settings'         => [ // see https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
                 'metadata.broker.list'    => env('LOG_KAFKA_BROKER_LIST', '127.0.0.1:9092'),
-                'queue.buffering.max.ms'  => 1, // < flush_timeout_ms, send messages ASAP
+                'queue.buffering.max.ms'  => 3000, // < flush_timeout_ms, send messages ASAP
                 'socket.keepalive.enable' => true,
                 'log_level'               => LOG_WARNING,
             ],
