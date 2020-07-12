@@ -10,14 +10,16 @@ The Kafka logger for Laravel.
 
 | Dependency | Requirement |
 | -------- | -------- |
-| [PHP](https://secure.php.net/manual/en/install.php) | `>=5.5.9` |
 | [php-rdkafka](https://github.com/arnaud-lb/php-rdkafka) | `>=4.0.0` |
 
 ## Install
 > Install package via [Composer](https://getcomposer.org/).
 
 ```shell
+# Laravel 5.x
 composer require "hhxsv5/laravel-kafka-logger:~1.0.0"
+# Laravel 6.x & 7.x
+composer require "hhxsv5/laravel-kafka-logger:~2.0.0"
 ```
 
 ## Get Started
