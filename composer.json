@@ -21,11 +21,11 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
+    "php": ">=7.1.0",
     "ext-rdkafka": ">=4.0.0"
   },
   "require-dev": {
-    "laravel/framework": ">=5.1.0"
+    "laravel/framework": ">=6.0.0"
   },
   "autoload": {
     "psr-4": {

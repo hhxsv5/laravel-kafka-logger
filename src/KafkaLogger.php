@@ -7,7 +7,12 @@ use RdKafka\Conf;
 
 class KafkaLogger
 {
-    public static function getDefinition(array $custom = [])
+    /**
+     * Get the logging definition of Kafka channel
+     * @param array $custom
+     * @return array
+     */
+    public static function getDefinition(array $custom = []): array
     {
         $default = [
             'driver'           => 'custom',

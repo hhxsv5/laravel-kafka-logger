@@ -2,6 +2,7 @@
 
 namespace Hhxsv5\LKL;
 
+use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LogstashFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
@@ -74,7 +75,7 @@ class KafkaLogHandler extends AbstractProcessingHandler
      *
      * @return void
      */
-    protected function write(array $record)
+    protected function write(array $record): void
     {
         $data = (string)$record['formatted'];
         try {
@@ -90,15 +91,15 @@ class KafkaLogHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function getDefaultFormatter()
+    protected function getDefaultFormatter(): FormatterInterface
     {
-        return new LogstashFormatter($this->applicationName, null, 'ext_', 'ctx_', LogstashFormatter::V1);
+        return new LogstashFormatter($this->applicationName, null, 'ext_', 'ctx_');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function close()
+    public function close(): void
     {
         parent::close();
         $result = $this->producer->flush($this->flushTimeout);
