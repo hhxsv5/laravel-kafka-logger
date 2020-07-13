@@ -81,7 +81,7 @@ class KafkaLogHandler extends AbstractProcessingHandler
         try {
             $this->topic->produce(RD_KAFKA_PARTITION_UA, 0, $data);
             $this->producer->poll(0);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             // TODO: Unable to detect Kafka connection status, so Fallback is not useful
             $method = strtolower($record['level_name']);
             app('log')->channel($this->fallback)->$method(sprintf('%s (%s fallback: %s)', $data, $record['channel'], $e->getMessage()));
