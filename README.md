@@ -13,8 +13,14 @@ The Kafka logger for Laravel.
 | [php-rdkafka](https://github.com/arnaud-lb/php-rdkafka) | `>=4.0.0` |
 
 ## Install
-> Install package via [Composer](https://getcomposer.org/).
 
+1.Install `rdkafka`.
+```bash
+git clone --depth 1 https://github.com/edenhill/librdkafka.git /tmp/librdkafka && cd /tmp/librdkafka && ./configure && make -j$(nproc) && make install && rm -rf /tmp/librdkafka
+pecl install rdkafka
+```
+
+2.Install `laravel-kafka-logger`.
 ```shell
 # Laravel 5.x
 composer require "hhxsv5/laravel-kafka-logger:~1.0.0"
@@ -24,13 +30,7 @@ composer require "hhxsv5/laravel-kafka-logger:~2.0.0"
 
 ## Get Started
 
-1.Install `rdkafka`.
-```bash
-git clone --depth 1 https://github.com/edenhill/librdkafka.git /tmp/librdkafka && cd /tmp/librdkafka && ./configure && make -j$(nproc) && make install && rm -rf /tmp/librdkafka
-pecl install rdkafka
-```
-
-2.Modify `config/logging.php`.
+1.Modify `config/logging.php`.
 ```php
 return [
     'channels' => [
@@ -40,7 +40,7 @@ return [
 ];
 ```
 
-3.Modify `.env`.
+2.Modify `.env`.
 ```
 LOG_CHANNEL=kafka
 LOG_KAFKA_BROKER_LIST=kafka:9092
